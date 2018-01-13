@@ -58,12 +58,12 @@ right: 2
 u-turn: 3
 """
 
-def light_up(dir_num: int):
-  if dir_num == 0: 	#do nothing 
-		all_off()
+def light_up(dir_num):
+  if dir_num == 0:   #do nothing 
+    all_off()
     
   elif dir_num == 1:
-  	L1_led.write(1)
+    L1_led.write(1)
     
   elif dir_num == 2:
     L2_led.write(1)
@@ -72,7 +72,7 @@ def light_up(dir_num: int):
     L3_led.write(1)
     
   elif dir_num == 4:
-  	R1_led.write(1)
+    R1_led.write(1)
     
   elif dir_num == 5:
     R2_led.write(1)
@@ -81,7 +81,7 @@ def light_up(dir_num: int):
     R3_led.write(1)
     
   elif dir_num == 7:
-  	U1_led.write(1)
+    U1_led.write(1)
     
   elif dir_num == 8:
     U2_led.write(1)
@@ -90,7 +90,7 @@ def light_up(dir_num: int):
     U3led.write(1)
     
   elif dir_num == 10:
-  	L1_led.write(1)
+    L1_led.write(1)
     U1_led.write(1)
     
   elif dir_num == 11:
@@ -100,29 +100,29 @@ def light_up(dir_num: int):
   elif dir_num == 12:
     L3_led.write(1)
     U3_led.write(1)
-    
+
 def all_off():
   """Turns off all the leds"""
-  	L1_led.write(0)
-    L2_led.write(0)
-    L3_led.write(0)
-    
-    R1_led.write(0)
-    R2_led.write(0)
-    R3_led.write(0)
-    
-  	U1_led.write(0)
-    U2_led.write(0)
-    U3_led.write(0)
+  L1_led.write(0)
+  L2_led.write(0)
+  L3_led.write(0)
+
+  R1_led.write(0)
+  R2_led.write(0)
+  R3_led.write(0)
+
+  U1_led.write(0)
+  U2_led.write(0)
+  U3_led.write(0)
 
 
 if __name__ == "__main__":
-	#=========TESTING==========
+  #=========TESTING==========
   time.sleep(2)
   
   for i in range (3):
     #Turn Left Sequence
-  	light_up(1)     
+    light_up(1)     
     time.sleep(2)
     light_up(2)
     time.sleep(2)
@@ -133,8 +133,8 @@ if __name__ == "__main__":
     light_up(0)
     time.sleep(3)
     
-  	#Turn Right Sequence
-  	light_up(4)     
+    #Turn Right Sequence
+    light_up(4)     
     time.sleep(2)
     light_up(5)
     time.sleep(2)
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     
     
     #U-Turn Sequence
-  	light_up(4)     
+    light_up(4)     
     time.sleep(2)
     light_up(5)
     time.sleep(2)
@@ -157,19 +157,3 @@ if __name__ == "__main__":
     #Reset Lights
     light_up(0)
     time.sleep(3)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-  
-
-
-
-  
