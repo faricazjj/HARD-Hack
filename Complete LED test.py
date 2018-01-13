@@ -16,17 +16,17 @@ BASE_URL = "http://proxoshop.com:3001/directions"
 # Left LED Block
 L1_led = mraa.Gpio(23)
 L2_led = mraa.Gpio(24)
-L3_led = mraa.Gpio(25)
+L3_led = mraa.Gpio(27)
 
 # Right LED Block
 R1_led = mraa.Gpio(26)
-R2_led = mraa.Gpio(27)
-R3_led = mraa.Gpio(29)
+R2_led = mraa.Gpio(25)
+R3_led = mraa.Gpio(30)
 
 # U-turn LED Block
-U1_led = mraa.Gpio(30)
-U2_led = mraa.Gpio(31)
-U3_led = mraa.Gpio(32)
+U1_led = mraa.Gpio(29)
+U2_led = mraa.Gpio(32)
+U3_led = mraa.Gpio(31)
 
 # set LEFT LED to output
 L1_led.dir(mraa.DIR_OUT)
@@ -44,7 +44,7 @@ U2_led.dir(mraa.DIR_OUT)
 U3_led.dir(mraa.DIR_OUT)
 
 
-def light_up(dir_num: int):
+def light_up(dir_num):
     """
     This function light's up certain LED blocks based on the direction number:
     - nothing: 0
@@ -116,52 +116,45 @@ if __name__ == "__main__":
     #=========TESTING==========
     time.sleep(2)
     for i in range (3):
-    #Turn Left Sequence
-    light_up(1)
-    time.sleep(2)
-    light_up(2)
-    time.sleep(2)
-    light_up(3)
-    time.sleep(2)
+        #Reset Lights
+        light_up(0)
+        time.sleep(3)
 
-    #Reset Lights
-    light_up(0)
-    time.sleep(3)
+        #Turn Left Sequence
+        light_up(1)
+        time.sleep(1)
+        light_up(2)
+        time.sleep(1)
+        light_up(3)
+        time.sleep(1)
 
-    #Turn Right Sequence
-    light_up(4)
-    time.sleep(2)
-    light_up(5)
-    time.sleep(2)
-    light_up(6)
-    time.sleep(2)
+        #Reset Lights
+        light_up(0)
+        time.sleep(3)
 
-    #Reset Lights
-    light_up(0)
-    time.sleep(3)
+        #Turn Right Sequence
+        light_up(4)
+        time.sleep(1)
+        light_up(5)
+        time.sleep(1)
+        light_up(6)
+        time.sleep(1)
 
+        #Reset Lights
+        light_up(0)
+        time.sleep(3)
 
-    #U-Turn Sequence
-      light_up(4)
-    time.sleep(2)
-    light_up(5)
-    time.sleep(2)
-    light_up(6)
-    time.sleep(2)
+        #U-Turn Sequence
+        light_up(1)
+        light_up(7)
+        time.sleep(1)
+        light_up(2)
+        light_up(8)
+        time.sleep(1)
+        light_up(3)
+        light_up(9)
+        time.sleep(1)
 
-    #Reset Lights
-    light_up(0)
-    time.sleep(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #Reset Lights
+        light_up(0)
+        time.sleep(3)
