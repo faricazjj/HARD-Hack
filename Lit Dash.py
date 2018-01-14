@@ -63,10 +63,13 @@ def light_up(dir_num):
 
     elif dir_num == 2:
         all_off()
+        L1_led.write(1)
         L2_led.write(1)
 
     elif dir_num == 3:
         all_off()
+        L1_led.write(1)
+        L2_led.write(1)
         L3_led.write(1)
 
     elif dir_num == 4:
@@ -75,10 +78,13 @@ def light_up(dir_num):
 
     elif dir_num == 5:
         all_off()
+        R1_led.write(1)
         R2_led.write(1)
 
     elif dir_num == 6:
         all_off()
+        R1_led.write(1)
+        R2_led.write(1)
         R3_led.write(1)
 
     elif dir_num == 7:
@@ -87,10 +93,13 @@ def light_up(dir_num):
 
     elif dir_num == 8:
         all_off()
+        U1_led.write(1)
         U2_led.write(1)
 
     elif dir_num == 9:
         all_off()
+        U1_led.write(1)
+        U2_led.write(1)
         U3_led.write(1)
 
     elif dir_num == 10:
@@ -100,11 +109,17 @@ def light_up(dir_num):
 
     elif dir_num == 11:
         all_off()
+        L1_led.write(1)
+        U1_led.write(1)
         L2_led.write(1)
         U2_led.write(1)
 
     elif dir_num == 12:
         all_off()
+        L1_led.write(1)
+        U1_led.write(1)
+        L2_led.write(1)
+        U2_led.write(1)
         L3_led.write(1)
         U3_led.write(1)
 
