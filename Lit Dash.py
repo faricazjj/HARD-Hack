@@ -8,9 +8,10 @@
 # Execution: sudo python mraa_gpio.py
 
 import json
-import urllib.parse
-import urllib.request
-# import mraa
+import urllib2
+#import urllib.parse
+#import urllib.request
+import mraa
 import time
 
 # ========================SET-UP=========================
@@ -19,17 +20,17 @@ BASE_URL = "http://proxoshop.com:3001/directions"
 # Left LED Block
 L1_led = mraa.Gpio(23)
 L2_led = mraa.Gpio(24)
-L3_led = mraa.Gpio(25)
+L3_led = mraa.Gpio(27)
 
 # Right LED Block
 R1_led = mraa.Gpio(26)
-R2_led = mraa.Gpio(27)
-R3_led = mraa.Gpio(29)
+R2_led = mraa.Gpio(25)
+R3_led = mraa.Gpio(30)
 
 # U-turn LED Block
-U1_led = mraa.Gpio(30)
-U2_led = mraa.Gpio(31)
-U3_led = mraa.Gpio(32)
+U1_led = mraa.Gpio(29)
+U2_led = mraa.Gpio(32)
+U3_led = mraa.Gpio(31)
 
 # set LEFT LED to output
 L1_led.dir(mraa.DIR_OUT)
@@ -47,7 +48,7 @@ U2_led.dir(mraa.DIR_OUT)
 U3_led.dir(mraa.DIR_OUT)
 
 
-def light_up(dir_num: int):
+def light_up(dir_num):
     """
     This function light's up certain LED blocks based on the direction number:
     - nothing: 0
@@ -113,10 +114,10 @@ def all_off():
     U3_led.write(0)
 
 
-def get_result(url:str) -> [dict]:
+def get_result(url):
     response = None
     try:
-        response = urllib.request.urlopen(url)
+        response = urllib2.urlopen(url)
         json_text = response.read().decode(encoding = 'utf-8')
         return json.loads(json_text)
 
